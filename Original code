@@ -2,15 +2,15 @@
 import random
 # print multiline instruction
 # performstring concatenation of string
-print('Winning rules of the game ROCK PAPER SCISSORS are :\n'
-      + "Rock vs Paper -> Paper wins \n"
+print('Winning rules of the game ROCK GRAPHENE PAPER SCISSORS WATER GUN are :\n'
+      + "Rock vs Graphene paper -> Graphene paper wins \n"
       + "Rock vs Scissors -> Rock wins \n"
-      + "Paper vs Scissors -> Scissor wins \n"
-      + "Water gun vs Water gun -> Water win \n")
+      + "Scissors vs Water gun -> Scissors wins \n"
+      + "Water gun vs Graphene paper -> Water gun win \n")
  
 while True:
      
-    print("Enter your choice \n 1 - Rock \n 2 - Paper \n 3 - Scissors \n 4 - water gun")
+    print("Enter your choice \n 1 - Rock \n 2 - Graphene paper \n 3 - Scissors \n 4 - Water gun")
      
     # take the input from user
      
@@ -29,15 +29,15 @@ while True:
     if choice == 1:
         choice_name= 'Rock'
     if choice == 2:
-        choice_name= 'Paper'
-    if choice ==3:
-        choice_name= 'scissor'
+        choice_name= 'Graphene paper'
+    if choice == 3:
+        choice_name= 'Scissors'
     if choice == 4:
-        choice_name= 'water gun'
+        choice_name= 'Water gun'
          
         # print user choice
     print('User choice is \n',choice_name)
-    print('Now its Computers Turn....')
+    print('Now its My Turn....')
      
     # Computer chooses randomly any number
     # among 1 , 2 and 3. Using randint method
@@ -52,61 +52,182 @@ while True:
      # initialize value of comp_choice_name
     # variable corresponding to the choice value
     if comp_choice == 1:
-        comp_choice_name = 'rocK'
+        comp_choice_name = 'Rock'
     if comp_choice == 2:
-        comp_choice_name = 'papeR'
+        comp_choice_name = 'Graphene paper'
     if  comp_choice == 3:
-        comp_choice_name = 'scissoR'
+        comp_choice_name = 'Scissors'
     if comp_choice == 4:
-        comp_choice_name = 'water gun'
+        comp_choice_name = 'Water gun'
         
     print("Computer choice is \n", comp_choice_name)
     print(choice_name,'Vs',comp_choice_name)
+    
+    
     # we need to check of a draw
     if choice == comp_choice:
+        print("""
+    ________                                     _______   
+---'    ____)____                           ____(_____  '---
+           ______)                         (______
+          _______)                         (________
+         _______)                           (________
+---.__________)                               (_________.---
+""") 
         print('Its a Draw',end="")
         result="DRAW"
+    elif (choice==2 and comp_choice==3):
+        print("""
+    _______                                      _______   
+---'   ____)____                            ____(____   '---
+          ______)                          (______
+       __________)                         (_______
+      (____)                                (________
+---.__(___)                                   (_________.---
+""")
+        result="DRAW"
+    elif (choice==3 and comp_choice==2):
+        print("""
+    _______                                      _______   
+---'   ____)____                            ____(____   '---
+          ______)                          (______
+       __________)                         (_______
+      (____)                                (________
+---.__(___)                                   (_________.---
+""")
+        result="DRAW"
+    elif (choice==1 and comp_choice==4):
+        print("""
+    _______                                     _______   
+---'   ____)                            _______(____   '---
+      (_____)                          (_________
+      (_____)                                 (_____)
+      (____)                                   (____)
+---.__(___)                                     (___)__.---
+""")
+        result="DRAW"
+    elif (choice==4 and comp_choice==1):
+        print("""
+    _______                                       _______   
+---'   ____)                              _______(____   '---
+      (_____)                            (_________
+      (_____)                                   (_____)
+      (____)                                     (____)
+---.__(___)                                       (___)__.---
+""")
+        result="DRAW"
+        
     # condition for winning
     if (choice==1 and comp_choice==2):
-        print('paper wins =>',end="")
+        print('Graphene paper wins =>',end="")
+        print("""
+    _______                                       _______   
+---'   ____)                                 ____(____   '---
+      (_____)                               (______
+      (_____)                               (_______
+      (____)                                 (________
+---.__(___)                                    (_________.---
+""")
         result='Graphene paper'
+        
     elif (choice==2 and comp_choice==1):
+        print("""
+    _______                                       _______   
+---'   ____)                                 ____(____   '---
+      (_____)                               (______
+      (_____)                               (_______
+      (____)                                 (________
+---.__(___)                                    (_________.---
+""")
+
         print('Graphene paper wins =>',end="")
         result='Graphene Paper'
+        
     if (choice==1 and comp_choice==3):
+        print("""
+    _______                                       _______   
+---'   ____)                                 ____(____   '---
+      (_____)                               (______
+      (_____)                              (__________
+      (____)                                     (____)
+---.__(___)                                       (___)__.---
+""")
         print('Rock wins =>\n',end= "")
         result='Rock'
+        
     elif (choice==3 and comp_choice==1):
+        print("""
+    _______                                       _______   
+---'   ____)                                 ____(____   '---
+      (_____)                               (______
+      (_____)                              (__________
+      (____)                                     (____)
+---.__(___)                                       (___)__.---
+""")
         print('Rock wins =>\n',end= "")
-        result='rocK'
+        result='Rock'
+        
     if (choice==4 and comp_choice==2):
+        print("""
+    _______                                       _______   
+---'   ____)_______                          ____(____   '---
+          _________)                        (______
+      (_____)                               (_______
+      (____)                                 (________
+---.__(___)                                    (_________.---
+""")
         print('Water gun wins =>',end="")
         result='Water gun'
-    elif (choice==4 and comp_choice==3):
-        print('scissors wins =>',end="")
+        
+    elif (choice==2 and comp_choice==4):
+        print("""
+    _______                                       _______   
+---'   ____)____                          _______(____   '---
+          ______)                        (_________
+         _______)                               (_____)
+        _______)                                 (____)
+---.__________)                                   (___)__.---
+""")
+        print('Water gun wins =>',end="")
         result='Water gun'
-    elif (choice==4 and comp_choice==1):
-        print('draw =>',end="")
-        result='Draw'
-    if (choice==2 and comp_choice==3):
+        
+    if (choice==3 and comp_choice==4):
+        print("""
+    _______                                        _______   
+---'   ____)____                           _______(____   '---
+          ______)                         (_________
+       __________)                               (_____)
+      (____)                                      (____)
+---.__(___)                                        (___)__.---
+""")
         print('Scissors wins =>',end="")
-        result='scissoR'
-    elif (choice==3 and comp_choice==2):
+        result='Scissors'
+        
+    elif (choice==4 and comp_choice==3):
+        print("""
+    _______                                        _______   
+---'   ____)_______                           ____(____   '---
+          _________)                         (______
+      (_____)                               (__________
+      (____)                                      (____)
+---.__(___)                                        (___)__.---
+""")
         print('Scissors wins =>',end="")
-        result='Rock'
+        result='Scissors'
+    
      # Printing either user or computer wins or draw
     if result == 'DRAW':
-        print("<== Its a tie ==>")
+        print("Hey, we tied")
     if result == choice_name:
-        print("<== User wins ==>")
-    else:
-        print("<== Computer wins ==>")
+        print("I'll win next time")
+    if result == comp_choice:
+        print("Haha, maybe next time")
     print("Do you want to play again? (Y/N)")
+    
     # if user input n or N then condition is True
     ans = input().lower()
     if ans =='n':
         break
 # after coming out of the while loop
 # we print thanks for playing
-print("thanks for playing")
-
+print("C'mon, play me again")
