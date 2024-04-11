@@ -1,13 +1,13 @@
 # import random module
 import random
-# print multiline instruction
-# performstring concatenation of string
+# print instructions
 print('Winning rules of the game ROCK GRAPHENE PAPER SCISSORS WATER GUN are :\n'
-      + "Rock vs Graphene paper -> Graphene paper wins \n"
-      + "Rock vs Scissors -> Rock wins \n"
-      + "Scissors vs Water gun -> Scissors wins \n"
-      + "Water gun vs Graphene paper -> Water gun win \n")
- 
+      + "-Graphene paper beats Rock \n"
+      + "-Rock beats Scissors \n"
+      + "-Scissors beats Water gun \n"
+      + "-Water gun beats Graphene paper \n"
+      + "It is a draw if the same is chosen or a comination not listed above is chosen \n")
+
 while True:
      
     print("Enter your choice \n 1 - Rock \n 2 - Graphene paper \n 3 - Scissors \n 4 - Water gun")
@@ -16,13 +16,9 @@ while True:
      
     choice=int(input("Enter your choice :"))
      
-     # OR is the short-circuit operator
-    # if any one of the condition is true
-    # then it return True value
-     
     # looping until user enter invalid input
     while choice > 4 or choice <1:
-      choice=int(input('Enter a valid choice please ☺'))
+      choice=int(input('Enter a valid choice'))
          
         # initialize value of choice_name variable
     # corresponding to the choice value
@@ -65,48 +61,67 @@ while True:
     
     
     # we need to check of a draw
-    if choice == comp_choice:
+    if (choice==1 and comp_choice==1):
         print("""
-    ________                                     _______   
----'    ____)____                           ____(_____  '---
-           ______)                         (______
-          _______)                         (________
-         _______)                           (________
----.__________)                               (_________.---
+    _______                                      _______   
+---'   ____)                                    (____   '---
+      (_____)                                  (_____)
+      (_____)                                  (_____)
+      (____)                                    (____)
+---.__(___)                                      (___)__.---
 """) 
-        print('Its a Draw',end="")
+        result="DRAW"
+    elif (choice==2 and comp_choice==2):
+        print("""
+    ________                                      _______   
+---'    ____)____                            ____(_____  '---
+           ______)                          (______
+          _______)                          (________
+         _______)                            (________
+---.__________)                                (_________.---
+""") 
+        result="DRAW"
+    elif (choice==3 and comp_choice==3):
+        print("""
+    _______                                       _______   
+---'   ____)____                             ____(____   '---
+          ______)                           (______
+       __________)                         (__________
+      (____)                                     (____)
+---.__(___)                                       (___)__.---
+""") 
+        result="DRAW"
+    elif (choice==4 and comp_choice==4):
+        print("""
+    _______                                       _______   
+---'   ____)______                        _______(____   '---
+         _________)                      (_________
+      (_____)                                   (_____)
+      (____)                                     (____)
+---.__(___)                                       (___)__.---
+""") 
         result="DRAW"
     elif (choice==2 and comp_choice==3):
         print("""
-    _______                                      _______   
----'   ____)____                            ____(____   '---
-          ______)                          (______
-       __________)                         (_______
-      (____)                                (________
----.__(___)                                   (_________.---
+    ________                                      _______   
+---'    ____)____                            ____(____   '---
+           ______)                          (______
+          _______)                         (__________
+         _______)                                (____)
+---.__________)                                   (___)__.---
 """)
         result="DRAW"
     elif (choice==3 and comp_choice==2):
         print("""
-    _______                                      _______   
----'   ____)____                            ____(____   '---
-          ______)                          (______
-       __________)                         (_______
-      (____)                                (________
----.__(___)                                   (_________.---
+    _______                                       _______   
+---'   ____)____                             ____(____   '---
+          ______)                           (______
+       __________)                          (_______
+      (____)                                 (________
+---.__(___)                                    (_________.---
 """)
         result="DRAW"
     elif (choice==1 and comp_choice==4):
-        print("""
-    _______                                     _______   
----'   ____)                            _______(____   '---
-      (_____)                          (_________
-      (_____)                                 (_____)
-      (____)                                   (____)
----.__(___)                                     (___)__.---
-""")
-        result="DRAW"
-    elif (choice==4 and comp_choice==1):
         print("""
     _______                                       _______   
 ---'   ____)                              _______(____   '---
@@ -116,10 +131,19 @@ while True:
 ---.__(___)                                       (___)__.---
 """)
         result="DRAW"
+    elif (choice==4 and comp_choice==1):
+        print("""
+    _______                                       _______   
+---'   ____)______                               (____   '---
+         _________)                             (_____)
+      (_____)                                   (_____)
+      (____)                                     (____)
+---.__(___)                                       (___)__.---
+""")
+        result="DRAW"
         
     # condition for winning
     if (choice==1 and comp_choice==2):
-        print('Graphene paper wins =>',end="")
         print("""
     _______                                       _______   
 ---'   ____)                                 ____(____   '---
@@ -128,19 +152,20 @@ while True:
       (____)                                 (________
 ---.__(___)                                    (_________.---
 """)
+        print('Graphene paper wins \n',end="")
         result='Graphene paper'
         
     elif (choice==2 and comp_choice==1):
         print("""
-    _______                                       _______   
----'   ____)                                 ____(____   '---
-      (_____)                               (______
-      (_____)                               (_______
-      (____)                                 (________
----.__(___)                                    (_________.---
+    ________                                      _______  
+---'    ____)____                                (____   '---
+           ______)                              (_____)
+          _______)                              (_____)
+         _______)                                (____)
+---.__________)                                   (___)__.---
 """)
 
-        print('Graphene paper wins =>',end="")
+        print('Graphene paper wins \n',end="")
         result='Graphene Paper'
         
     if (choice==1 and comp_choice==3):
@@ -152,19 +177,19 @@ while True:
       (____)                                     (____)
 ---.__(___)                                       (___)__.---
 """)
-        print('Rock wins =>\n',end= "")
+        print('Rock wins \n',end= "")
         result='Rock'
         
     elif (choice==3 and comp_choice==1):
         print("""
     _______                                       _______   
----'   ____)                                 ____(____   '---
-      (_____)                               (______
-      (_____)                              (__________
+---'   ____)____                                 (____   '---
+          ______)                               (_____)
+       __________)                              (_____)
       (____)                                     (____)
 ---.__(___)                                       (___)__.---
 """)
-        print('Rock wins =>\n',end= "")
+        print('Rock wins \n',end= "")
         result='Rock'
         
     if (choice==4 and comp_choice==2):
@@ -176,7 +201,7 @@ while True:
       (____)                                 (________
 ---.__(___)                                    (_________.---
 """)
-        print('Water gun wins =>',end="")
+        print('Water gun wins \n',end="")
         result='Water gun'
         
     elif (choice==2 and comp_choice==4):
@@ -188,7 +213,7 @@ while True:
         _______)                                 (____)
 ---.__________)                                   (___)__.---
 """)
-        print('Water gun wins =>',end="")
+        print('Water gun wins \n',end="")
         result='Water gun'
         
     if (choice==3 and comp_choice==4):
@@ -200,7 +225,7 @@ while True:
       (____)                                      (____)
 ---.__(___)                                        (___)__.---
 """)
-        print('Scissors wins =>',end="")
+        print('Scissors wins \n',end="")
         result='Scissors'
         
     elif (choice==4 and comp_choice==3):
@@ -212,22 +237,23 @@ while True:
       (____)                                      (____)
 ---.__(___)                                        (___)__.---
 """)
-        print('Scissors wins =>',end="")
+        print('Scissors wins \n',end="")
         result='Scissors'
     
      # Printing either user or computer wins or draw
     if result == 'DRAW':
-        print("Hey, we tied")
+        print("Hey, we tied \n",end="")
     if result == choice_name:
-        print("I'll win next time")
+        print("I'll win next time \n",end="")
     if result == comp_choice:
-        print("Haha, maybe next time")
-    print("Do you want to play again? (Y/N)")
+        print("Haha, maybe next time \n",end="")
+
+    print("Do you want to play again? Enter: Y or N")
     
     # if user input n or N then condition is True
     ans = input().lower()
     if ans =='n':
         break
+
 # after coming out of the while loop
-# we print thanks for playing
 print("C'mon, play me again")
