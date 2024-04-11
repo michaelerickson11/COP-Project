@@ -1,26 +1,30 @@
 # import random module
 import random
 # print instructions
-print('Winning rules of the game ROCK GRAPHENE PAPER SCISSORS WATER GUN are :\n'
+print('How to win Rock, Graphene paper, Scissors, Water gun :\n'
       + "-Graphene paper beats Rock \n"
       + "-Rock beats Scissors \n"
       + "-Scissors beats Water gun \n"
       + "-Water gun beats Graphene paper \n"
-      + "It is a draw if the same is chosen or a comination not listed above is chosen \n")
+      + "It is a draw if the same is chosen or if a comination of choices not listed above are chosen. \n")
 
 while True:
      
-    print("Enter your choice \n 1 - Rock \n 2 - Graphene paper \n 3 - Scissors \n 4 - Water gun")
+    print("Choices: \n 1 - Rock \n 2 - Graphene paper \n 3 - Scissors \n 4 - Water gun")
      
     # take the input from user
-     
-    choice=int(input("Enter your choice :"))
-     
-    # looping until user enter invalid input
+    
+    while True:
+        try:
+            choice = int(input("Please enter your choice: "))
+            break 
+        except ValueError:
+            print("Invalid input. Your choice must be either 1,2,3, or 4.")
+            
     while choice > 4 or choice <1:
-      choice=int(input('Enter a valid choice'))
+        choice=int(input('Enter a valid choice'))
          
-        # initialize value of choice_name variable
+    # initialize value of choice_name variable
     # corresponding to the choice value
     if choice == 1:
         choice_name= 'Rock'
@@ -36,12 +40,10 @@ while True:
     print('Now its My Turn....')
      
     # Computer chooses randomly any number
-    # among 1 , 2 and 3. Using randint method
-    # of random module
+    # among 1 , 2 and 3. Using randint method of random module
     comp_choice = random.randint(1,4)
      
-    # looping until comp_choice value
-    # is equal to the choice value
+    # looping until comp_choice value is equal to the choice value
     while comp_choice == choice:
         comp_choice = random.randint(1,4)
          
@@ -60,7 +62,7 @@ while True:
     print(choice_name,'Vs',comp_choice_name)
     
     
-    # we need to check of a draw
+    # if it is a draw
     if (choice==1 and comp_choice==1):
         print("""
     _______                                      _______   
@@ -142,7 +144,7 @@ while True:
 """)
         result="DRAW"
         
-    # condition for winning
+    # Cases for winning 
     if (choice==1 and comp_choice==2):
         print("""
     _______                                       _______   
@@ -240,13 +242,13 @@ while True:
         print('Scissors wins \n',end="")
         result='Scissors'
     
-     # Printing either user or computer wins or draw
+     # Print who wins or print draw
     if result == 'DRAW':
-        print("Hey, we tied \n",end="")
+        print("Hey, we tied. \n",end="")
     if result == choice_name:
-        print("I'll win next time \n",end="")
-    if result == comp_choice:
-        print("Haha, maybe next time \n",end="")
+        print("I'll win next time. \n",end="")
+    if result == comp_choice_name:
+        print("Haha, maybe next time. \n",end="")
 
     print("Do you want to play again? Enter: Y or N")
     
@@ -256,4 +258,5 @@ while True:
         break
 
 # after coming out of the while loop
-print("C'mon, play me again")
+print("I'll be sure to study for next time.")
+
