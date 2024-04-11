@@ -22,7 +22,7 @@ while True:
             print("Invalid input. Your choice must be either 1,2,3, or 4.")
             
     while choice > 4 or choice <1:
-        choice=int(input('Enter a valid choice'))
+        choice=int(input('Enter a valid choice:'))
          
     # initialize value of choice_name variable
     # corresponding to the choice value
